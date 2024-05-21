@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="/src/styles/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles/dashboard.css">
+    <link rel="stylesheet" href="/src/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="stylesheet" href="/src/styles/editprofile.css">
+</head>
+<body>
+    <header class="dashboard_header">
+        <div class="dashboard_header_bar">
+            <span class="w-28 h-20">
+                <img src="./assets/icons/atpvdms.png" class="w-full h-full" aria-label="ATPVDMS logo" alt="ATPVDMS logo">
+            </span>
+
+            <div class="dashboard_headers_images">
+                <img class="w-28 h-10 bg-white object-contain" src="assets/images/tetfund_co_support_img.png" aria-label="tetfund co-support logo" alt="tetfund co-support logo" />
+                <img class="w-28 h-10 bg-white object-contain" src="assets/images/tetfund_img.png" aria-label="tetfund logo" alt="tetfund logo" />
+            </div>
+            
+            <!-- List -->
+            <ul id="nav-link" class="dashboard_navItem">
+                <li class="cursor-pointer flex items-center">
+                    <a href="/src/dashboard.html" style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">dashboard</a>
+                </li>
+                <li class="cursor-pointer flex items-center" style="margin-right:30px;">
+                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">log</a>
+                    <div class="dashboard_header_icon">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    
+                </li>
+                <li class="cursor-pointer flex items-center">
+                    <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="/src/profile.html">profile</a>
+                </li>
+                <li class="cursor-pointer flex items-center">
+                    <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">blockchain</a>
+                </li>
+                <li class="cursor-pointer flex items-center dashboard_list">
+                    <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">maps</a>
+                    <div class="dashboard_header_icon">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                </li>
+                <div class="dashboard_dropdown_map">
+                    <li><a href="">tracker</a></li>
+                    <li><a href="">pipeline</a></li>
+                </div>
+                <!-- <li class="cursor-pointer flex items-center">
+                    <a class="text-2xl font-normal capitalize" href="">dashboard</a>
+                </li> -->
+            </ul>
+            <!-- End of List -->
+    
+            <!-- User -->
+            <div class="flex items-center gap-24">
+                <!-- Notification Icon -->
+                <span class="w-20 h-20 relative">
+                    <!-- Insert Notification icon here -->
+                    <span class="">
+                        <!-- Insert Active_Indicator component here -->
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </span>
+                    <span class="absolute top-0 right-0">
+                        <!-- Insert Active component here -->
+                    </span>
+                </span>
+    
+                <!-- User Avatar -->
+                <img class="w-32 h-32 rounded-full cursor-pointer" src="assets/images/avatar.png" alt="" />
+    
+                <!-- User Information -->
+                <div class="active:scale-90 dashboard_header_userinfo">
+                    <span class="text-center text-[14px] text-[#800E80] font-normal">Akinbanin Masturoh</span>
+                    <span class="text-12 text-[#800E80] font-bold">#Admin</span>
+                    
+                    <!-- Dropdown list -->
+                    <div class="dashboard_header_dropdown">
+                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize flex items-center justify-between" href="">
+                            <!-- Insert Download icon here -->
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <span>Download</span>
+                        </a>
+                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize" href="">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <span>Share</span>
+                        </a>
+                    </div>
+                    <!-- End of Dropdown list -->
+                </div>
+                <!-- End of User Information -->
+            </div>
+            <div class="dashboard_header_menu">
+                <i id="menu-icon" class="fa fa-bars" aria-hidden="true"></i>
+                <nav id="nav-links" class="hidden">
+                    <ul class="">
+                        <li><a href="">log</a></li>
+                        <li><a href="">profile</a></li>
+                        <li><a href="">map</a></li>
+                    </ul>
+                    <!-- <div class="close">
+                        <i id="close-icon" class="fa fa-times" aria-hidden="true"></i>
+                    </div> -->
+                </nav>
+            </div>
+            <!-- End of User -->
+        </div>
+    </header>
+    <div class="edit_profile_container">
+        <div>
+            <div class="edit_profile_image">
+                <img src="/src/assets/images/Ellipse 1.png" alt="">
+                <p>edit</p>
+            </div>
+            <form action="">
+                <fieldset class="edit_profile_form">
+                    <div class="group_control">
+                        <label for="fullName">Full name:</label>
+                        <input type="text" id="fullName" class="">
+                    </div>
+                    
+                    <div class="group_control ml-0"
+                    >
+                        <label for="password">password:</label>
+                        <input type="password" id="password" class="">
+                    </div>
+                    <div class="group_control">
+                        <label for="Email">Email Address:</label>
+                        <input type="text" id="Email" class="">
+                    </div>
+                    <div class="group_control ml-0"
+                    >
+                    <label for="contact">contact:</label>
+                    <input type="number" id="contact" class="">
+                </div>
+                    <div class="group_control">
+                        <label for="role">role:</label>
+                        
+                        <input type="text" id="Administration" class="">
+                    </div>
+                    <div class="group_control ml-0"
+                    >
+                        <label for="Region">Region:</label>
+                        <input type="text" id="Region" class="">
+                    </div>
+                    <div class="group_control">
+                        <label for="AdminNo">Admin Number:</label>
+                        <input type="text" id="AdminNo" class="">
+                    </div>
+                    <div class="group_control ml-0" 
+                    >
+                        <label for="language">Language:</label>
+                        <select name="" id="">
+                            <option value="English">English</option>
+                            <option value="hausa">Hausa</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="group_control-textarea">
+                    <label for="bio">Bio:</label>
+                    <textarea name="" id="bio">
+    
+                    </textarea>
+                </div>
+                <div class="group_button">
+                    <button type="button">cancel</button>
+                    <button type="button">save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/src/main.js"></script>
+</html>
