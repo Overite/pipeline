@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="styles/output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="max-sm:hidden bg-transparent w-full h-[100vh] relative flex items-center justify-center">
+        <div class="w-[80%] h-[87%] bg-transparent flex flex-col justify-start items-end pt-[20px] pr-[20px] relative" style="box-shadow:0px 4px 16px 6px rgba(0, 0, 0, 0.25)">
+            <h2 class="w-[45%] text-center text-[32px] font-[700] text-[#800E80]">Login</h2>
+
+            <form class="w-[45%] mb-[2rem] flex flex-col">
+                <div class="w-full flex flex-col gap-[24px]">
+                    <div class="relative w-full">
+                        <input class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] focus:border-none focus:outline-none font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[30px]" placeholder="Email / Admin number" />
+                    </div>
+
+                    <div class="relative w-full">
+                        <input type="password" class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] focus:border-none focus:outline-none font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[30px]" name="password" placeholder="Password" />
+                        <span class="w-[20.5px] h-[20.5px] absolute top-[10px] right-0">
+                           <img src="./assets/icons/eye-slash.png" aria-label="eye-slash" alt="eye-slash">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between px-2 mt-[3px] mb-[40px]">
+                    <span class="flex gap-2">
+                        <input class="bg-[#800E80] text-[#800E80] fill-[#800E80]" type="checkbox" name="remember_me" />
+                        <span class="text-[#800E80] text-[14px] font-[400]">Remember me</span>
+                    </span>
+
+                    <a href="/forgot_password" class="text-[#800E80] text-[14px] font-[400]">Forgot password?</a>
+                </div>
+
+                <div class="flex flex-col gap-[24px] mt-[40px]">
+                    <button class="flex items-center justify-center w-full h-[48px] py-[8px] px-[24px] text-white bg-[#800E80] rounded-[4px] text-[16px] font-[700]" type="button">   
+                    <span>
+                        <!-- <Spinner h={15} w={15} />  -->
+                    </span>
+                    Submit
+                    </button>
+
+                    <p class="text-center text-[rgba(19, 18, 18, 0.60)] text-[16px] font-[400]">
+                        Don't have an account? <a class="font-[700] text-[#800E80]" href="/signup">Sign Up</a>
+                    </p>
+                </div>
+            </form>
+
+            <span class="w-[107px] h-[101px] absolute top-[3%] left-[12%] z-[2]">
+                <img src="./assets/icons/atpvdms.png" class="" aria-label="ATPVDMS logo" alt="ATPVDMS logo">
+            </span>
+
+            <span class="w-[fit-content] absolute bottom-[15px] right-[15px] flex gap-[1px]">
+                <img class="h-[15px] object-contain" src="assets/images/tetfund_co_support_img.png" aria-label="tetfund co support" alt="tetfund co support" />
+                <img class="h-[18px] object-contain" src="assets/images/tetfund_img.png" aria-label="tetfund logo" alt="tetfund logo" />
+            </span>
+
+        </div>
+
+        <div class="w-[35vw] h-full fixed top-0 left-0 z-[-1] pr-[97px] pt-[48px] text-[10rem] bg-[#800E80] flex flex-col items-end justify-start" style="box-shadow:0px 4px 16px 6px rgba(0, 0, 0, 0.25)">
+        </div>
+    </div>
+</body>
+</html>

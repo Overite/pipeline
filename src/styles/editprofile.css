@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.edit_profile_container{
+    margin: 0 auto;
+    max-width: 94%;
+    display: flex;
+    flex-direction: column;
+    height: 825px;
+    width: 1416px;
+}
+
+.edit_profile_image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.edit_profile_container img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.edit_profile_form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.edit_profile_form .group_control{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit_profile_form .group_control label{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30.72px;
+    color:#800E80;
+    text-transform: capitalize;
+}
+
+.edit_profile_form .group_control input, select{
+    border-bottom: 1px solid #800E80;
+    background-color: #fff;
+    width: 366px;
+    margin-left: 2rem;
+    outline: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #800E80;
+}
+
+.group_control-textarea{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.group_control-textarea label {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30.72px;
+    color:#800E80;
+    text-transform: capitalize;   
+    margin-left: 1rem; 
+}
+
+.group_control-textarea textarea{
+    border: 1px solid #800E80;
+    background-color: #fff;
+    width: 1075px;
+    height: 129px;
+    border: 1px solid #800E80;
+    font-size: 20px;
+    font-weight: 400;
+    color: #800E80;
+    resize: none;
+}
+
+.group_button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+.group_button button{
+    width: 140px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.48px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    background: #800E80;
+    color: #fff;
+    padding: 8px 24px;
+    gap: 10px;
+}
+
+.ml-0{
+    margin-left: 5rem;
+}
+@media screen and (max-width:480px) {
+
+    .edit_profile_container{
+        margin:3rem 0;
+    }
+    .edit_profile_image{
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .edit_profile_form{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .ml-0{
+        margin-left: 0;
+    }
+    .edit_profile_form .group_control, .group_control-textarea{
+        flex-direction: column;
+    }
+
+    .edit_profile_form .group_control input, select{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .group_control-textarea textarea{
+        display: block;
+        width: 100%;
+        margin:0 0.75rem;
+    }
+}
+
+
