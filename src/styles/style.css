@@ -148,6 +148,8 @@
     display: block;   
 }
 
+
+/* mobile phone  */
 @media screen and (max-width:480px) {
     /* .dashboard_pipeline{
         flex-direction: column;
@@ -176,4 +178,27 @@
         display: flex;
         flex-direction: column;
     }
+}
+
+
+@media screen and (max-width:768px) {
+    .dashboard_header_userinfo{
+        display: none;
+    }
+    .dashboard_header_bar span img{
+        height: 50px;
+        width: 50px;
+    }
+    .dashboard_headers_images{
+        display: none;
+    }
+
+    .dashboard_navItem{
+        display: none;
+    }
+
+    .dashboard_header_menu{
+        display: block;
+    }
+
 }

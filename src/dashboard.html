@@ -27,11 +27,15 @@
                 <li class="cursor-pointer flex items-center">
                     <a href="/src/dashboard.html" style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">dashboard</a>
                 </li>
-                <li class="cursor-pointer flex items-center" style="margin-right:30px;">
-                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">log</a>
-                    <div class="dashboard_header_icon">
+                <li class="dashboard_list" style="margin-right:30px;">
+                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">log</a>
+                    <ul class="dashboard_dropdown">
+                        <li><a href="./log.html">tanker</a></li>
+                        <li><a href="">pipeline</a></li>
+                    </ul>
+                    <span class="dashboard_header_icon">
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </div>
+                    </span>
                     
                 </li>
                 <li class="cursor-pointer flex items-center">
@@ -40,22 +44,18 @@
                 <li class="cursor-pointer flex items-center">
                     <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">blockchain</a>
                 </li>
-                <li class="cursor-pointer flex items-center dashboard_list">
+                <li class="dashboard_list">
                     <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">maps</a>
-                    <div class="dashboard_header_icon">
+                    <ul class="dashboard_dropdown">
+                        <li><a href="">tracker</a></li>
+                        <li><a href="">pipeline</a></li>
+                    </ul>
+                    <span class="dashboard_header_icon">
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </div>
-                </li>
-                <div class="dashboard_dropdown_map">
-                    <li><a href="">tracker</a></li>
-                    <li><a href="">pipeline</a></li>
-                </div>
-                <!-- <li class="cursor-pointer flex items-center">
-                    <a class="text-2xl font-normal capitalize" href="">dashboard</a>
-                </li> -->
+                    </span>
+                </li> 
             </ul>
-            <!-- End of List -->
-    
+            
             <!-- User -->
             <div class="flex items-center gap-24">
                 <!-- Notification Icon -->
@@ -65,27 +65,24 @@
                         <!-- Insert Active_Indicator component here -->
                         <i class="fa fa-bell" aria-hidden="true"></i>
                     </a>
-                    <span class="absolute top-0 right-0">
-                        <!-- Insert Active component here -->
-                    </span>
                 </span>
     
                 <!-- User Avatar -->
                 <img class="w-32 h-32 rounded-full cursor-pointer" src="assets/images/avatar.png" alt="" />
     
                 <!-- User Information -->
-                <div class="active:scale-90 dashboard_header_userinfo">
+                <div class="active:scale-90 dashboard_header_userinfo dashboard_list">
                     <span class="text-center text-[14px] text-[#800E80] font-normal">Akinbanin Masturoh</span>
                     <span class="text-12 text-[#800E80] font-bold">#Admin</span>
                     
                     <!-- Dropdown list -->
-                    <div class="dashboard_header_dropdown">
+                    <div class="dashboard_header_dropdown dashboard_dropdown">
                         <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize flex items-center justify-between" href="">
                             <!-- Insert Download icon here -->
                             <i class="fa fa-download" aria-hidden="true"></i>
                             <span>Download</span>
                         </a>
-                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize" href="">
+                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize flex items-center justify-between" href="">
                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                             <span>Share</span>
                         </a>

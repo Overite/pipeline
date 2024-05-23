@@ -37,7 +37,7 @@ body {
     flex-direction: row;
 }
 
-.dashboard_dropdown_map{
+.dashboard_dropdown{
     display: none;
 }
 
@@ -45,6 +45,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #nav-links{
@@ -91,23 +92,18 @@ body {
     cursor: pointer;
     height: 56.6px;
     width: 154px;
-
 }
 
-.dashboard_dropdown_map{
-    display: none;
+.dashboard_dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
     background-color: #800E80;
-    gap: 1.5rem;
-    padding: 2rem 0;
-    width: fit-content;
-    height: fit-content;
-    color: #fff;
-    /* position: absolute; */
-    /* top: 1rem;
-    left: 1rem; */
-    /* transform: translateX(-50%); */
-    border: 1px solid #cccccc;
-    /* z-index: 1; */
+    color: white;
+    height: 80px;
+    width:215px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard_header_icon{
@@ -116,8 +112,30 @@ body {
     cursor: pointer;
 }
 
-.dashboard_header_icon:hover.dashboard_dropdown_map {
-   display: block;
+
+.dashboard_list{
+    position: relative;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+}
+
+.dashboard_list:hover .dashboard_dropdown{
+    display: block;
+}
+
+.dashboard_dropdown li{
+    padding: 10px 30px;
+    border-bottom: 1px solid gray;
+}
+.dashboard_dropdown li a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size:24px;
+    line-height:32px;
+    text-transform: capitalize; 
+    font-weight: 400;
 }
 
 .dashboard_header_userinfo > span{
@@ -134,16 +152,25 @@ body {
 }
 
 .dashboard_header_dropdown{
-    visibility: hidden;
     background-color: #800E80;
-    display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2rem 0;
-    width: fit-content;
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
     height: fit-content;
-
+    width:190px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.dashboard_header_dropdown > a{
+    border-bottom: 1px solid gray;
+    padding: 0.5srem;
+}
+
 
 .dashboard_header_menu{
   display: none;
@@ -293,4 +320,25 @@ body {
 }
 
 
+@media screen and (max-width:886px) {
+    .dashboard_header_userinfo{
+        display: none;
+    }
+    .dashboard_header_bar span img{
+        height: 50px;
+        width: 50px;
+    }
+    .dashboard_headers_images{
+        display: none;
+    }
 
+    .dashboard_navItem{
+        display: none;
+    }
+
+
+    .dashboard_header_menu{
+        display: block;
+    }
+
+}
