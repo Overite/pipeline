@@ -58,17 +58,21 @@ function fetchTankerData() {
                 var newRow = document.createElement("tr");
                 newRow.innerHTML = `
                   
-                    <td style="padding: 8px;">${row['sn']}</td>
-                    <td style="padding: 8px;">${row['lat']} ${row['lng']}</td>
-                    <td style="padding: 8px;">${row['location']}</td>
-                    <td style="padding: 8px;">${row['pms_level']}</td>
-                    <td style="padding: 8px;">${formatDateToLagosTime(row['Timestamp'])}</td>
+                    <td style="padding: 10px;">${row['sn']}</td>
+                    <td style="padding: 10px;">${row['lat']} ${row['lng']}</td>
+                    <td style="padding: 10px;">${row['location']}</td>
+                    <td style="padding: 10px;">${row['pms_level']}</td>
+                    <td style="padding: 10px;">${formatDateToLagosTime(row['Timestamp'])}</td>
                 `;
                 document.getElementById("logDataBody").appendChild(newRow);
             });
         })
         .catch(error => console.error('Error fetching tanker data:', error));
 }
+
+
+//=========================================     ===============================================//
+
 
 // Function to fetch pipeline data from the server and update the table
 function fetchPipelineData() {
@@ -81,11 +85,11 @@ function fetchPipelineData() {
                 var newRow = document.createElement("tr");
                 newRow.innerHTML = `
                    
-                    <td style="padding: 8px;">${row['pi_id']}</td>
-                    <td style="padding: 8px;">${row['latitude']} ${row['longitude']}</td>
-                    <td style="padding: 8px;">${row['flowrate'] || row['location']}</td>
-                    <td style="padding: 8px;">${row['vibration'] || row['pms_level']}</td>
-                    <td style="padding: 8px;">${formatDateToLagosTime(row['timestamp'])}</td>
+                    <td style="padding: 10px; padding-right: -30px;">${row['pi_id']}</td>
+                    <td style="padding: 10px; padding-right: -30px;">${row['latitude']} ${row['longitude']}</td>
+                    <td style="padding: 10px; padding-right: -30px;">${row['flowrate'] || row['location']}</td>
+                    <td style="padding: 10px; padding-right: -30px;">${row['vibration'] || row['pms_level']}</td>
+                    <td style="padding: 10px; padding-right: -30px;">${formatDateToLagosTime(row['timestamp'])}</td>
                 `;
                 document.getElementById("logDataBody").appendChild(newRow);
             });
@@ -123,3 +127,56 @@ fetchTankerData(); // Start with tanker data
 
 // Set interval to fetch data every 5 seconds
 setInterval(toggleLog, 5000);
+
+//===================================================   =================================================//
+
+
+ // Function to fetch notifications from the server and populate the list
+ function fetchNotifications() {
+    fetch('server/log/fetch_notifications.php')
+        .then(response => response.json())
+        .then(data => {
+            const notificationList = document.getElementById('notificationList');
+            notificationList.innerHTML = ''; // Clear existing notifications
+            
+            // Loop through each notification and create HTML elements
+            data.forEach(notification => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" data-id="${notification.id}">
+                        <div style="display: flex; align-items: center; gap: 1px;">
+                            <span>
+                                <img src="assets/icons/truck.svg" alt="">
+                            </span>
+                            <span style="font-size: 14px; font-weight: 400;">${notification.message} ${notification.location}</span>
+                        </div>
+                        <span style="cursor: pointer; width: 12px; height: 12px; background-color: #fff;" onclick="deleteNotification(${notification.id})"></span>
+                    </div>
+                `;
+                notificationList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error fetching notifications:', error));
+}
+
+// Function to delete a notification
+function deleteNotification(id) {
+    fetch(`server/log/delete_notification.php?id=${id}`, { method: 'DELETE' })
+        .then(response => {
+            if (response.ok) {
+                // Remove the deleted notification from the list
+                const notification = document.querySelector(`[data-id="${id}"]`);
+                if (notification) {
+                    notification.remove();
+                }
+            } else {
+                console.error('Failed to delete notification:', response.statusText);
+            }
+        })
+        .catch(error => console.error('Error deleting notification:', error));
+}
+
+// Fetch notifications when the page loads
+window.onload = fetchNotifications;
+// Set interval to fetch data every 5 seconds
+setInterval(fetchNotifications, 5000);
