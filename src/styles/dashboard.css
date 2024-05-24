@@ -279,7 +279,7 @@ body {
     grid-row-end: 4; 
     background-color: #800E80; 
     position: relative; 
-    background-image: url('/src/assets/images/map_without_legend.png'); 
+    background-image: url('assets/images/map_without_legend.png'); 
     height: 319px;
     width: 461px;
 }
