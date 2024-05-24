@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="styles/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
+</head>
+<body>
+    <header class="dashboard_header">
+        <div class="dashboard_header_bar">
+            <span class="w-28 h-20">
+                <img src="assets/icons/atpvdms.png" class="w-full h-full" aria-label="ATPVDMS logo" alt="ATPVDMS logo">
+            </span>
+
+            <div class="dashboard_headers_images">
+                <img class="w-28 h-10 bg-white object-contain" src="assets/images/tetfund_co_support_img.png" aria-label="tetfund co-support logo" alt="tetfund co-support logo" />
+                <img class="w-28 h-10 bg-white object-contain" src="assets/images/tetfund_img.png" aria-label="tetfund logo" alt="tetfund logo" />
+            </div>
+            
+            <!-- List -->
+            <ul id="nav-link" class="dashboard_navItem">
+                <li class="cursor-pointer flex items-center">
+                    <a href="src/dashboard.html" style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">dashboard</a>
+                </li>
+                <li class="dashboard_list" style="margin-right: 30px; position: relative;">
+                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">log</a>
+                    <ul class="dashboard_dropdown">
+                        <li><a href="tanker.html">tanker</a></li>
+                        <li><a href="pipeline.html">pipeline</a></li>
+                    </ul>
+                    <span class="dashboard_header_icon">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </li>
+                <li class="cursor-pointer flex items-center">
+                    <a href="profile.html" style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">profile</a>
+                </li>
+                <li class="cursor-pointer flex items-center">
+                    <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">blockchain</a>
+                </li>
+                <li class="dashboard_list">
+                    <a style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;" href="">maps</a>
+                    <ul class="dashboard_dropdown">
+                        <li><a href="">tracker</a></li>
+                        <li><a href="pipeline.html">pipeline</a></li>
+                    </ul>
+                    <span class="dashboard_header_icon">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </li> 
+            </ul>
+            
+            <!-- User -->
+            <div class="flex items-center gap-24">
+                <!-- Notification Icon -->
+                <span class="w-20 h-20 relative">
+                    <!-- Insert Notification icon here -->
+                    <a href="notification.html" class="">
+                        <!-- Insert Active_Indicator component here -->
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </a>
+                </span>
+    
+                <!-- User Avatar -->
+                <img class="w-32 h-32 rounded-full cursor-pointer" src="assets/images/avatar.png" alt="" />
+    
+                <!-- User Information -->
+                <div class="active:scale-90 dashboard_header_userinfo dashboard_list">
+                    <span class="text-center text-[14px] text-[#800E80] font-normal">Akinbanin Masturoh</span>
+                    <span class="text-12 text-[#800E80] font-bold">#Admin</span>
+                    
+                    <!-- Dropdown list -->
+                    <div class="dashboard_header_dropdown dashboard_dropdown">
+                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize flex items-center justify-between" href="">
+                            <!-- Insert Download icon here -->
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <span>Download</span>
+                        </a>
+                        <a class="border-b-1 border-white text-white text-16 font-bold py-3 px-25 capitalize flex items-center justify-between" href="">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <span>Share</span>
+                        </a>
+                    </div>
+                    <!-- End of Dropdown list -->
+                </div>
+                <!-- End of User Information -->
+            </div>
+            <div class="dashboard_header_menu">
+                <i id="menu-icon" class="fa fa-bars" aria-hidden="true"></i>
+                <nav id="nav-links" class="hidden">
+                    <ul class="">
+                        <li><a href="log.html">log</a></li>
+                        <li><a href="profile.html">profile</a></li>
+                        <li><a href="">map</a></li>
+                    </ul>
+                    <!-- <div class="close">
+                        <i id="close-icon" class="fa fa-times" aria-hidden="true"></i>
+                    </div> -->
+                </nav>
+            </div>
+            <!-- End of User -->
+        </div>
+    </header>
+    <div class="dashboard">
+        <div class="dashboard_pipeline">
+            <div class="dashboard_pipeline_tracker">
+                <div style="display: flex; flex-direction: column;">
+                    <h2 style="font-size: 32px; font-weight: 700;">Active Pipeline Tracker</h2>
+                    <p style="font-size: 16px; font-weight: 700;">Total number of pipeline tracker</p>
+                </div>
+                <span style="font-size: 32px; font-weight: 700;">5</span>
+            </div>
+            <div style="grid-column-start: 7; grid-column-end: 13; grid-row-start: 1; grid-row-end: 2; background-color: #800E80; color: #fff; padding: 0 20px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; flex-direction: column;">
+                    <h2 style="font-size: 32px; font-weight: 700;">Active Pipeline Tracker</h2>
+                    <p style="font-size: 16px; font-weight: 700;">Total number of pipeline tracker</p>
+                </div>
+                <span style="font-size: 32px; font-weight: 700;">5</span>
+            </div>
+            <div class="dashboard_log">
+                    <h2 style="width: 90%; display: flex; gap: 2px; align-items: center; font-size: 16px; color: #fff; font-weight: 400;">Log
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </h2> 
+                        
+    
+                <div class="dashboard_table">
+
+                    <!-- Table content with inline styles -->
+                    <table class="dashboard_subtable">
+                        <!-- <thead class="dashboard_subtable thead">
+                            <tr>
+                                <th style="padding: 8px; text-align: left;">Tank level(M3)</th>
+                                <th style="padding: 8px; text-align: left;">Gps-coordinate</th>
+                                <th style="padding: 8px; text-align: left;">Location Name</th>
+                                <th style="padding: 8px; text-align: left;">Time</th>
+                                <th style="padding: 8px; text-align: left;">Date</th>
+                            </tr>
+                        </thead> -->
+                        <thead class="ltr:text-left rtl:text-right">
+                            <tr class="">
+                              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Tank level(M3)</th>
+                              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Gps-coordinate</th>
+                              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Location Name</th>
+                              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Time</th>
+                              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Date</th>
+                            </tr>
+                          </thead>
+                      
+                        <tbody>
+                            <tr >
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #800E80; color: #fff; font-size: 14px; text-align: center;">
+                                <td style="padding: 8px;">2754</td>
+                                <td style="padding: 8px;">Lat-9535495 Lan- 6.45167</td>
+                                <td style="padding: 8px;">Checking</td>
+                                <td style="padding: 8px;">02:36pm</td>
+                                <td style="padding: 8px;">22 April, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div style="grid-column-start: 9; grid-column-end: 13; grid-row-start: 2; grid-row-end: 3; background-color: #800E80; display: flex; flex-direction: column; gap: 16px;">
+                <h2 style="width: 80%; margin-left: auto; font-size: 16px; color: #fff; font-weight: 700; padding-top: 3px;">Devices</h2>
+                <div style="width: 80%; height: 85%; margin-left: auto; padding-right: 2px; overflow-y: scroll; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">
+                    <!-- Device list content with inline styles -->
+                    <ul class="flex flex-col gap-[16px] h-[fit-content] text-white">
+                            <div class="flex items-center justify-between text-white">
+                                <span class="text-[16px] font-[400]"> Truck A - 279002EF</span>
+                                <span class="text-[10px] font-[700]">Tanker</span>
+                            </div>
+                            <div class="flex items-center justify-between text-white">
+                                <span class="text-[16px] font-[400]"> Truck A - 279002EF</span>
+                                <span class="text-[10px] font-[700]">Tanker</span>
+                            </div>
+                            <div class="flex items-center justify-between text-white">
+                                <span class="text-[16px] font-[400]"> Truck A - 279002EF</span>
+                                <span class="text-[10px] font-[700]">Tanker</span>
+                            </div>
+                            <div class="flex items-center justify-between text-white">
+                                <span class="text-[16px] font-[400]"> Truck A - 279002EF</span>
+                                <span class="text-[10px] font-[700]">Tanker</span>
+                            </div>
+                    </ul>
+
+                </div>
+            </div>
+            <div style="grid-column-start: 1; grid-column-end: 5; grid-row-start: 3; grid-row-end: 4; background-color: #800E80; display: flex; flex-direction: column; gap: 16px;">
+                <a href='dashboard.html/notification.html' style="text-decoration: none;">
+                    <h2 style="width: 80%; margin-left: auto; font-size: 16px; color: #fff; font-weight: 700; padding-top: 3px;">Notifications</h2>
+                </a>
+                <div style="width: 80%; height: 85%; margin: 0 auto; overflow-y: scroll; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">
+                    <!-- Notification list content with inline styles -->
+                    <ul style="display: flex; flex-direction: column; gap: 16px; height: fit-content;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;">
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" key={index}>
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" key={index}>
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;">
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;">
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;">
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" key={index}>
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;">
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" key={index}>
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/dot.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; color: #fff;" key={index}>
+                                <div style="display: flex; align-items: center; gap: 1px;">
+                                    <span>
+                                        <img src="assets/icons/truck.svg" alt="">
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 400;"> Truck A with tank level 2754 just</span>
+                                </div>
+                                <span style="width: 12px; height: 12px; background-color: #fff;"></span>
+                            </div>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <div class="dashboard_map">
+                <div style="width: 85%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
+                    <span style="font-size: 16px; font-weight: 700;">Map</span>
+                    <span style="font-size: 14px; font-weight: 400;">-Pipeline</span>
+                </div>
+                <div style="position: absolute; bottom: 16px; left: 16px; z-index: 2; background-color: #800E80; display: grid; grid-template-columns: 15px auto; grid-template-rows: 15px auto; gap: 1px;">
+                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span style="background-color: #03A9F5; width: 12px; height: 12px;"></span>
+                    </span>
+                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Flow Rate</span>
+                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span style="background-color: #000; width: 12px; height: 12px;"></span>
+                    </span>
+                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Vibration</span>
+                </div>
+            </div>
+            
+            <div class="dashboard_map">
+                <div style="width: 85%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
+                    <span style="font-size: 16px; font-weight: 700;">Map</span>
+                    <span style="font-size: 14px; font-weight: 400;">-Tracker</span>
+                </div>
+            </div>
+            <div style="width: 100%; height: 100%; background-color: #fff; overflow-y: scroll; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;" class="visible_thumb_bar">
+                <div style="margin: 0 auto; max-width: 100%; width: 100%; display: grid; grid-template-rows: 200px 380px 390px; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding-top: 24px;">
+                    <!-- Continue with remaining grid items here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
