@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <link href="./output.css" rel="stylesheet">
+    <link href="styles/output.css" rel="stylesheet">
 </head>
 <body>
     <div class="max-sm:hidden bg-transparent w-full h-[100vh] relative flex items-center justify-center">
@@ -12,15 +12,16 @@
             <h2 class="w-[45%] text-center text-[32px] font-[700] text-[#800E80]">Sign Up</h2>
 
             <form class="w-[45%] mb-[2rem] flex flex-col mt-5">
+                <h4 style="color:red" class="err_text"></h4>
                 <div class="w-full flex flex-col gap-[24px]">
                     <div class="relative w-full">
-                        <input type="text" placeholder="Email address" class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[50px]" >
+                        <input type="email" placeholder="Email address" id="email" class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[50px]" >
                         <!-- <span class="w-[20.5px] h-[20.5px] absolute top-[10px] right-0">
                         </span>} -->
                     </div>
 
                     <div class="relative w-full">
-                        <input type="password" placeholder="password" class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[50px]"  />
+                        <input type="password" placeholder="password" id="pword" class="w-full border-b-[1px] outline-[unset] border-b-[rgba(0, 0, 0, 0.20)] text-[16px] font-[400] placeholder:text-[rgba(0, 0, 0, 0.40)] h-[50px]"  />
                         <span class="w-[20.5px] h-[20.5px] absolute top-[10px] right-0">
                             <img src="./assets/icons/eye-slash.png" aria-label="eye-slash" alt="eye-slash">
                         </span>
@@ -28,9 +29,9 @@
                 </div>
 
                 <div class="flex flex-col gap-[24px] mt-[40px]">
-                    <button>sign up</button> 
+                    <button type="button" id="reg" class="flex items-center justify-center w-full h-[48px] py-[8px] px-[24px] text-white bg-[#800E80] rounded-[4px] text-[16px] font-[700]">sign up</button> 
                     <p class="text-center text-[rgba(19, 18, 18, 0.60)] text-[16px] font-[400]">
-                        Already have an account? <a class="font-[700] text-[#800E80]" href="/login">Login</a>
+                        Already have an account? <a class="font-[700] text-[#800E80]" href="login.html">Login</a>
                     </p>
                 </div>
             </form>
@@ -49,6 +50,62 @@
         <div class="w-[35vw] h-full fixed top-0 left-0 z-[-1] pr-[97px] pt-[48px] text-[10rem] bg-[#800E80] flex flex-col items-end justify-start" style="box-shadow:4px 16px 6px rgba(0, 0, 0, 0.25)">
 
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function () {
+                var submit = $('#reg');
+                submit.click(function (e) {
+                    e.preventDefault();
+                    var email= $('#email').val().trim();
+                    var pword = $('#pword').val().trim();
+                    if(email.length<6 || pword.length<6){
+                        $('.err_text').html("Must not be less than 6 characters");
+                    }
+                  else if (email!= '' && pword != '') {
+                        $.ajax({
+                            type: "POST",
+                            url: "backend/control/register.php",
+                            data: {
+                               email:email,
+                                pword: pword
+                            },
+                            dataType: "Json",
+                            beforeSend: function () {
+                                $('#login').val('Processing...');
+                                $('#login').attr('disabled', true)
+                                $('#email').attr('disabled', true)
+                                $('#pword').attr('disabled', true)
+                            },
+                            success: function (response) {
+                                $('email').attr('disabled', true);
+                                $('pword').attr('disabled', true);
+                                if (response === 401 ) {
+                                    $('.err_text').html("Email already exist.");
+                                    $('#login').val('sign up');
+                                    $('#login').attr('disabled', false)
+                                } else if (response === 200) {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "success",
+                                        title: "Registered successfully",
+                                        showConfirmButton: true
+                                    }).then(function () {
+                                        window.location.href = "dashboard.html";
+                                    });
+                                }
+                            },
+                            error: function () {
+                            
+                            }
+                        });
+                    } else {
+                        $('#email').attr('disabled', true);
+                        $('#pword').attr('disabled', true);
+                    }
+    
+                })
+            });
+        </script>
 </body>
 </html>
