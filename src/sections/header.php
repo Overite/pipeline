@@ -1,6 +1,6 @@
 <header class="dashboard_header">
         <div class="dashboard_header_bar">
-            <span class="w-28 h-20">
+            <span class="w-20 h-19">
                 <img src="assets/icons/atpvdms.png" class="w-full h-full" aria-label="ATPVDMS logo" alt="ATPVDMS logo">
             </span>
 
