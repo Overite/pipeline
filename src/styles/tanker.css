@@ -1,0 +1,34 @@
+
+
+.log_container{
+    width: 100%;
+    height: 100%; 
+    /* overflow-y: scroll; 
+    visibility: auto; 
+    overflow-x: scroll; */
+}
+
+.log_column{
+    padding-top: 1rem; 
+    max-width: 94%; 
+    margin: 0 auto;
+}
+
+.log_table{
+    width: 100%; 
+    height: 90vh;  
+    visibility: auto; 
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.log_table > table{
+    width: 100%; 
+    height: 700px;
+}
+
+.log_table table thead tr{
+    background-color: #800E80;
+    color: #fff;
+}
