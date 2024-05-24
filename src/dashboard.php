@@ -122,33 +122,47 @@ $tankerResult = $conn->query($tankerQuery);
                 </div>
             </div>
             
-            <div class="dashboard_map">
-                <div style="width: 85%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
-                    <span style="font-size: 16px; font-weight: 700;">Map</span>
-                    <span style="font-size: 14px; font-weight: 400;">-Pipeline</span>
+            <div class="dashboard_map_container">
+                <div class="dashboard_map">
+                    <div style="width: 100%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
+                        <span style="font-size: 16px; font-weight: 700;">Map</span>
+                        <span style="font-size: 14px; font-weight: 400;">-Pipeline</span>
+                    </div>
+                    <iframe src="https://overite.co/191/map/pipe_line/index.php" style="width: 100%; height: 100%; border: none;"></iframe>
+                    <!-- <div style="position: absolute; bottom: 16px; left: 16px; z-index: 2; display: grid; grid-template-columns: 15px auto; grid-template-rows: 15px auto; gap: 1px;">
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <span style="background-color: #03A9F5; width: 12px; height: 12px;"></span>
+                        </span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Flow Rate</span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <span style="background-color: #000; width: 12px; height: 12px;"></span>
+                        </span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Vibration</span>
+                    </div> -->
                 </div>
-                <div style="position: absolute; bottom: 16px; left: 16px; z-index: 2; background-color: #800E80; display: grid; grid-template-columns: 15px auto; grid-template-rows: 15px auto; gap: 1px;">
-                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <span style="background-color: #03A9F5; width: 12px; height: 12px;"></span>
-                    </span>
-                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Flow Rate</span>
-                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <span style="background-color: #000; width: 12px; height: 12px;"></span>
-                    </span>
-                    <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Vibration</span>
+                <div class="dashboard_map">
+                    <div style="width: 100%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
+                        <span style="font-size: 16px; font-weight: 700;">Map</span>
+                        <span style="font-size: 14px; font-weight: 400;">-Tracker</span>
+                    </div>
+                    <iframe src="https://overite.co/191/map/tanker/index.php" style="width: 100%; height: 100%; border: none;"></iframe>
+                    <!-- <div style="position: absolute; bottom: 16px; left: 16px; z-index: 2; display: grid; grid-template-columns: 15px auto; grid-template-rows: 15px auto; gap: 1px;">
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <span style="background-color: #03A9F5; width: 12px; height: 12px;"></span>
+                        </span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Flow Rate</span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <span style="background-color: #000; width: 12px; height: 12px;"></span>
+                        </span>
+                        <span style="background-color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Vibration</span>
+                        </div>
+                    </div> -->
                 </div>
-            </div>
-            
-            <div class="dashboard_map">
-                <div style="width: 85%; background-color: #800E80; color: #fff; margin: 40px auto 0; padding: 8px;">
-                    <span style="font-size: 16px; font-weight: 700;">Map</span>
-                    <span style="font-size: 14px; font-weight: 400;">-Tracker</span>
-                </div>
-            </div>
-            <div style="width: 100%; height: 100%; background-color: #fff; overflow-y: scroll; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;" class="visible_thumb_bar">
-                <div style="margin: 0 auto; max-width: 100%; width: 100%; display: grid; grid-template-rows: 200px 380px 390px; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding-top: 24px;">
-                    <!-- Continue with remaining grid items here -->
-                </div>
+                <!-- <div style="width: 100%; height: 100%; background-color: #fff; overflow-y: scroll; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;" class="visible_thumb_bar">
+                    <div style="margin: 0 auto; max-width: 100%; width: 100%; display: grid; grid-template-rows: 200px 380px 390px; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding-top: 24px;">
+                        Continue with remaining grid items here -->
+                    <!-- </div>
+                </div> -->
             </div>
         </div>
     </div>
