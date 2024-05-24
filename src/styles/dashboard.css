@@ -237,16 +237,6 @@ body {
     align-items: center; 
     padding-top: 3px;
 }
-/* 
-.dashboard_log > h2{
-    width:98%;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    color:white;
-    font-size: 16px;
-    font-weight: 400;
-} */
 
 .dashboard_table {
     width: 90%; 
@@ -287,7 +277,7 @@ body {
 }
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:580px) {
     /* .dashboard_pipeline{
         flex-direction: column;
     } */
@@ -318,6 +308,12 @@ body {
 
     .dashboard_map{
         width: 100%;
+    }
+    
+    .dashboard_map_container{
+       flex-direction: column;
+       padding-bottom: 18px;
+       width: 100%;
     }
 }
 
