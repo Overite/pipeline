@@ -1,34 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
     const navLinks = document.getElementById('nav-links');
-    const links = document.querySelectorAll('#nav-link');
-    const activeLink = localStorage.getItem('activelink')
+    const links = document.querySelectorAll('#nav-link li');
 
-   
-    menuIcon.addEventListener('click', ()=>{
-        navLinks.classList.toggle('hidden')
-    })
-
-    if(activeLink){
-        const activeElement = document.querySelector(`a[href="${activeLink}"]`);
-        if(activeElement){
-            activeElement.classList.add('active')
-        }
-    }
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+    });
 
     links.forEach(link => {
-        link.addEventListener('click', (e)=>{
-            e.preventDefault()
+        link.addEventListener('click', function(e) {
+            const anchor = this.querySelector('a');
+            const href = anchor.getAttribute('href');
 
+            e.preventDefault();
             links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
 
-            this?.classList?.add('active');
+            localStorage.setItem('activelink', href);
+            window.location.hash = href;
+        });
+    });
 
-    localStorage.setItem('activelink',this?.getAttribute('href'));
-    window.location.hash = this.getAttribute('href');
-        })
-    })
+    // Activate the current link based on the hash in the URL
+    const activeLink = localStorage.getItem('activelink');
+    if (activeLink) {
+        const activeElement = document.querySelector(`#nav-link li a[href="${activeLink}"]`);
+        if (activeElement) {
+            activeElement.closest('li').classList.add('active');
+        }
+    }
 });
 
 

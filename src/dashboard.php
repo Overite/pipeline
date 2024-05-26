@@ -21,7 +21,6 @@ $pipelineResult = $conn->query($pipelineQuery);
 $tankerQuery = "SELECT sn FROM tankers";
 $tankerResult = $conn->query($tankerQuery);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +35,7 @@ $tankerResult = $conn->query($tankerQuery);
 </head>
 <body>
     <!-- hearder setion code  -->
-    <?php require 'sections/header.php';
-
-
-    ?>
+    <?php require 'sections/header.php';?>
     <div class="dashboard">
         <div class="dashboard_pipeline">
             <div class="dashboard_pipeline_tracker">

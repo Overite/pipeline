@@ -374,3 +374,7 @@ body {
     background-color: #800E80;
     color: #fff;
 }
+
+.map_page{
+    height: 100vh;
+}

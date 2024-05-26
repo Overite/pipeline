@@ -10,12 +10,12 @@
             </div>
             
             <!-- List -->
-            <ul id="nav-link" class="dashboard_navItem">
+            <ul id="" class="dashboard_navItem">
                 <li class="cursor-pointer flex items-center">
                     <a href="dashboard.php" style="margin-right:30px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">dashboard</a>
                 </li>
                 <li class="dashboard_list" style="margin-right: 30px; position: relative;">
-                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">log</a>
+                    <a style="margin-right:10px; font-size:24px;line-height:32px; text-transform: capitalize; font-weight: 400;">logs</a>
                     <ul class="dashboard_dropdown">
                         <li><a href="tanker.php">tanker</a></li>
                         <li><a href="pipeline.php">pipeline</a></li>
@@ -91,7 +91,7 @@
                     <li><a href="profile.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profile</a></li>
                     <li><a href="blockchain.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Blockchain</a></li>
                     <li><a href="tanker_map.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Tanker-map</a></li>
-                    <li><a href="pipeline_map" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Pipeline-map</a></li>
+                    <li><a href="pipeline_map.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Pipeline-map</a></li>
                 </ul>
                 </nav>
             </div>

@@ -14,7 +14,6 @@
      <!-- hearder setion code  -->
      <?php require 'sections/header.php';?>
 
-     
     <div class="log_container">
         <div class="log_column">
             <h2 style="color: #800E80; font-size: 16px; font-weight: 400; padding-bottom: 5px;">
