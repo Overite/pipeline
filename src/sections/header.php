@@ -54,9 +54,10 @@
                 </span>
     
                 <!-- User Avatar -->
-                <a href="profile.php">
-                     <img class="w-32 h-32 rounded-full cursor-pointer" src="assets/images/avatar.png" alt="" />
+                <a href="#">
+                    <img class="rounded-full cursor-pointer" src="server/img/<?php echo $img; ?>" alt="Profile Image" style="max-width: 3rem; max-height: 3rem;" />
                 </a>
+
                 <!-- User Information -->
                 <div class="active:scale-80 dashboard_header_userinfo dashboard_list">
                     
@@ -64,7 +65,7 @@
                         <!-- <?php echo $admin_name;?> -->
                         Futminna101
                     </span>
-                    <span class="text-10 text-[#800E80] font-bold">#Admin</span>
+                    <span class="text-10 text-[#800E80] font-bold"><?php echo $role;?></span>
                     
                     <!-- Dropdown list -->
                     <div class="dashboard_header_dropdown dashboard_dropdown">

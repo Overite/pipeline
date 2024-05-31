@@ -1,3 +1,32 @@
+<?php require 'server/database/db.php';
+
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header('Location: login.html'); // Redirect to the login page if not logged in
+    exit();
+}
+
+// Get admin data
+$email = $_SESSION['email'];
+$adminQuery = "SELECT full_name, role, img FROM admin WHERE email = ?";
+$stmt = $conn->prepare($adminQuery);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$adminResult = $stmt->get_result();
+$adminData = $adminResult->fetch_assoc();
+
+// Check if admin data exists
+if (!$adminData) {
+    // Redirect to login page if admin data not found
+    header('Location: login.html');
+    exit();
+}
+// Assign values to variables
+$full_name = $adminData['full_name'];
+$role = $adminData['role'];
+$img = $adminData['img'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +40,7 @@
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
 </head>
 <body>
-     <!-- hearder setion code  -->
+     <!-- header section code -->
      <?php require 'sections/header.php';?>
 
     <div class="log_container">
@@ -19,106 +48,81 @@
             <h2 style="color: #800E80; font-size: 16px; font-weight: 400; padding-bottom: 5px;">
                 Log-Tanker
             </h2>
-    
+            <a href="tanker_record.php">
+                <button onclick="fetchAllData()" style="margin-bottom: 10px; padding: 5px 10px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">View All Data</button>
+            </a>
             <div class="log_table">
-                <table>
+                <table id="tanker_table">
                     <thead>
                         <tr>
-                            <th>Conveyance id</th>
+                            <th>SN</th>
                             <th>Origin</th>
-                            <th>Destination</th>
                             <th>PMS Quality (Ltr)</th>
-                            <th>tank Level (M3)</th>
                             <th>Gps-Coordinates</th>
-                            <th>Location name</th>
-                            <th>Time</th>
-                            <th>Date</th>
+                            <th>tank Level (M3)</th>
+                            <th>Speed</th>
+                            <th>Destination</th>
+                            <th>Location Name</th>
+                            <th>Timestamp</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Your logs will be dynamically inserted here -->
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]">
-                            <td>1</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>2</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>3</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>4</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>5</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>6</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
-                        <tr class="text-[#800E80] text-[14px] text-center font[400]" key={index}>
-                            <td>7</td>
-                            <td>Minna </td>
-                            <td>Diko Depot</td>
-                            <td>2000</td>
-                            <td>2754</td>
-                            <td>Lat-9535495 Lan- 6.45167</td>
-                            <td>Checking</td>
-                            <td>02:36pm	22</td>
-                            <td>22 April, 2023</td>
-                        </tr>
+                        <!-- Data will be dynamically inserted here -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script>
+        // Function to fetch data from the PHP file every 2 seconds
+        function fetchData() {
+            fetch('server/log/fetch_tanker_data_b.php') // Update with your PHP file path
+                .then(response => response.json())
+                .then(data => {
+                    const tankerTableBody = document.querySelector('#tanker_table tbody');
+                    tankerTableBody.innerHTML = ''; // Clear previous data
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        // Format timestamp
+                        const timestamp = new Date(row.Timestamp);
+                        const formattedTimestamp = formatDate(timestamp);
+                        tr.innerHTML = `
+                             <td style="padding-left: 50px; color:#800E80;">${row.sn}</td>
+                             <td style="padding-left: 50px; color:#800E80;">Minna GK</td>
+                             <td style="padding-left: 50px; color:#800E80;">${row.pms_level}</td>
+                             <td style="padding-left: 50px; color:#800E80;">${row.lng} ${row.lat}</td>
+                             <td style="padding-left: 50px; color:#800E80;">2000</td>
+                             <td style="padding-left: 50px; color:#800E80;">${row.speed}</td>
+                             <td style="padding-left: 50px; color:#800E80;">Lagos</td>
+                             <td style="padding-left: 50px; color:#800E80;">${row.location}</td>
+                             <td style="padding-left: 50px; color:#800E80;">${formattedTimestamp}</td>
+                        `;
+                        tankerTableBody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+        
+        // Fetch data initially
+        fetchData();
+        
+        // Fetch data every 2 seconds
+        setInterval(fetchData, 2000);
+        
+        // Function to format date
+        function formatDate(date) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const day = date.getDate();
+            const monthIndex = date.getMonth();
+            const year = date.getFullYear();
+            let hours = date.getHours();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+            const formattedDate = `${day}th ${months[monthIndex]} ${year} ${hours}:${minutes}${ampm}`;
+            return formattedDate;
+        }
+    </script>
 </body>
-<script src="main.js"></script>
 </html>

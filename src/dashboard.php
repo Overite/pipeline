@@ -1,4 +1,13 @@
-<?php require 'server/database/db.php';?>
+<?php require 'server/database/db.php';
+
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header('Location: login.html'); // Redirect to the login page if not logged in
+    exit();
+}
+
+?>
 <!-- connection to database  -->
 <?php
 // Fetch the total number of pipelines
@@ -20,6 +29,27 @@ $pipelineResult = $conn->query($pipelineQuery);
 // Fetch devices from the tankers table
 $tankerQuery = "SELECT sn FROM tankers";
 $tankerResult = $conn->query($tankerQuery);
+
+// Get admin data
+$email = $_SESSION['email'];
+$adminQuery = "SELECT full_name, role, img FROM admin WHERE email = ?";
+$stmt = $conn->prepare($adminQuery);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$adminResult = $stmt->get_result();
+$adminData = $adminResult->fetch_assoc();
+
+// Check if admin data exists
+if (!$adminData) {
+    // Redirect to login page if admin data not found
+    header('Location: login.html');
+    exit();
+}
+
+// Assign values to variables
+$full_name = $adminData['full_name'];
+$role = $adminData['role'];
+$img = $adminData['img'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
